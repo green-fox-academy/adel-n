@@ -1,0 +1,43 @@
+body{
+    font-size: 16px;
+    color: white;
+    display: block;
+    width: 265px;
+    height: 540px;
+    margin: 2px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+.orange{
+    background-image: url(duck.png);
+    background-position: left;
+    background-size: 120px 100px;
+    background-repeat: no-repeat;
+    display: block;
+    background: orange;
+    width: 265px;
+    height: 100px;
+    text-align: center;
+    padding: 20px;
+}
+
+.purple{
+    background-image: url(duck.png);
+    background-position: center;
+    background-size: 180px 140px;
+    background-repeat: no-repeat;
+    background-color: purple;
+    width: 265px;
+    height: 180px;
+    text-align: center;
+    padding: 20px;
+}
+
+.grey{
+    background: grey;
+    width: 265px;
+    height: 250px;
+    text-align: center;
+    padding: 20px;
+}
