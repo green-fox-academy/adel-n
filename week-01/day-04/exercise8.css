@@ -1,7 +1,7 @@
 ul{
     border: 2.5px solid rgb(66, 133, 244);
     display: inline-block;
-    width: 550px;
+    width: 540px;
     height: 55px;
     padding: 10px
 }
@@ -15,8 +15,15 @@ li{
    
 }
 
-.second{
-    color:rgb(100, 53, 121);
-    background-color: rgb(255, 99, 71);
-    
+
+li.purple{
+    background-color: rgb(100, 53, 121);
+    z-index: -1; 
 }
+
+
+ul.second{
+background-color: rgb(255, 99, 71);
+}
+
+
