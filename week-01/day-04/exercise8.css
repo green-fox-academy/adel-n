@@ -1,0 +1,22 @@
+ul{
+    border: 2.5px solid rgb(66, 133, 244);
+    display: inline-block;
+    width: 550px;
+    height: 55px;
+    padding: 10px
+}
+
+li{
+    display: inline-block;
+    background-color: rgb(66, 133, 244);
+    height: 40px;
+    width: 40px;
+    margin: 5px;
+   
+}
+
+.second{
+    color:rgb(100, 53, 121);
+    background-color: rgb(255, 99, 71);
+    
+}

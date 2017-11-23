@@ -1,0 +1,26 @@
+body{
+    font-size: 36px;
+    color: white;
+    font-family: arial;
+    display:block;
+    text-align: center;
+}
+
+.north{
+    width: 350px;
+    height: 260px;
+    border: 15px solid rgb(66, 133, 244);
+    background-color: rgb(230, 118, 118);
+}
+
+.south{
+    width: 350px;
+    height: 260px;
+    border: 15px solid rgb(66, 133, 244);
+    background-color: rgb(169, 230, 230);
+    margin-top: 5px;
+}
+
+p{
+    padding: 20px;
+}

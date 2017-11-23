@@ -1,0 +1,42 @@
+body {
+    height: 520px;
+    width: 350px;
+    display: block;
+    color: white;
+    font-size: 36px;
+    border: 15px solid rgb(66, 133, 244);
+    text-align: center;
+    font-family: arial;
+    line-height: 125px;
+}
+
+.north{
+    height: 130px;
+    width: 350px;
+    display: block;
+    background-color: rgb(230, 118, 118);
+}
+
+.east{
+    height: 130px;
+    width: 350px;
+    display: block;
+    background-color: rgb(242, 240, 98);
+    text-align: center;
+}
+
+.south{
+    height: 130px;
+    width: 350px;
+    display: block;
+    background-color: rgb(169, 230, 230);
+    text-align: center;
+}
+
+.west{
+    height: 130px;
+    width: 350px;
+    display: block;
+    background-color: rgb(118, 146, 228);
+    text-align: center;
+}

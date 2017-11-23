@@ -1,0 +1,18 @@
+h1{
+    color: rgb(225, 127, 92);
+}
+
+h2{
+    color: rgb(138, 43, 226);
+}
+
+ol{
+    list-style-type: upper-roman;
+    text-decoration: underline;
+    color: rgb(225, 128, 255);
+}
+
+ol :last-child{
+    color: black;
+    text-decoration: underline black;
+}
