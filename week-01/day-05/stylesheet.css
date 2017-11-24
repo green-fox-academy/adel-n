@@ -1,0 +1,91 @@
+body{
+    box-sizing: border-box;
+}
+
+
+.box1{
+    box-sizing: border-box;
+    background-color: rgb(18, 119, 49);
+    width: 50%;
+    height: 750px;
+    position: center;
+    margin: auto;
+    padding-top: 20px;
+}
+
+.boxtop{
+    box-sizing: border-box;
+    width: 100%;
+    height: 50px;
+    background-color:yellow;
+    margin-bottom: 20px;
+    border: 10px solid red;   
+}
+
+.boxleft {
+    box-sizing: border-box;
+    width: 50%;
+    height: 440px;
+    background-color: yellow;
+    float: left;
+    border: 10px solid red;
+    margin-bottom: 20px;
+}
+
+.boxright{
+    box-sizing: border-box;
+    width: 50%;
+    height: 440px;
+    background-color: yellow;
+    float: right;
+    border: 10px solid red;
+    margin-bottom: 20px;
+}
+
+.boxbottom{
+    clear: both;
+    box-sizing: border-box;
+    width: 100%;
+    height: 150px;
+    background-color:yellow;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    border: 10px solid red;    
+}
+
+.one{
+    box-sizing: border-box;
+    height: 46px;
+    width: 50%;
+    border: 2px solid black;
+    float: left;
+    background-color: yellow;
+    margin-top: 60px;
+}
+
+.two{
+    box-sizing: border-box;
+    height: 46px;
+    width: 50%;
+    border: 2px solid black;
+    float: right;
+    background-color: yellow;
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+.three{
+    clear: both;
+    box-sizing: border-box;
+    height: 146px;
+    width: 100%;
+    border: 2px solid black;
+    background-color: yellow;
+    margin-top: 145px;
+    margin-bottom: 40px;
+}
+
+#name{
+    margin-top: 20px;
+    width: 100%;
+}
