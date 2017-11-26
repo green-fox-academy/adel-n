@@ -1,0 +1,173 @@
+*{
+    box-sizing: border-box;
+    margin: auto;
+}
+
+
+.container{
+    margin: 0 auto;
+    background: rgb(220,214,206);
+    width: 70%; 
+    height: 900px;
+    padding: 0 70px;
+    font-family: arial;
+    color: rgb(74, 68, 96);
+}
+
+h2{
+    padding: 30px 0;
+}
+
+.box1{
+    display: inline-block;
+    background: rgb(147, 140, 150);
+    color: white;
+    width: 280px;
+    height: 40px;
+    margin-right: 10px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.box2{
+    display: inline-block;
+    background: rgb(147, 140, 150);
+    color: white;
+    width: 280px;
+    height: 40px;
+    float: right;
+    margin-left: 20px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.box3{
+    background: rgb(220,214,206);
+    display: inline-block;
+    width: 50%;
+    height: 400px;
+    float: left;
+    padding: 15px;
+}
+
+.box4{
+    display: inline-block;
+    width: 50%;
+    height: 400px;
+    background: rgb(220,214,206);
+    float: right;
+    padding: 15px;
+    
+}
+
+.boxbottom{
+    background: rgb(220,214,206);
+    clear: both;
+    width: 100%;
+    height: 200px;
+    margin: 40px 0 20px 0;
+}
+
+.col1{
+    width:150px;
+    float: left;
+    margin: 10px;
+   
+}
+
+.col2{
+    width: 150px;
+    float: left;
+    margin: 10px;
+   
+}
+
+p{
+    clear:both;
+    padding: 5px 0;
+    color: rgb(126, 139, 156);
+}
+
+#name{
+    padding-top: 10px;
+    font-weight: bold;
+}
+
+input[name="name"]{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.phone{
+    padding-top: 10px;
+    font-weight: bold;
+}
+
+input[type="number"],
+input[type="email"],    
+input[type="url"]{
+    width: 100%;
+}
+
+input[list="building"]{
+    width: 100%;
+}
+
+legend.bold{
+    font-weight: bold;
+    padding-bottom: 10px;
+    padding-top: 20px;
+}
+
+input[type="date"]{
+    width: 100px;
+    float: left;
+  
+}
+
+legend.birth{
+    width:100px;
+    float: left;
+    margin-right: 5px;
+
+}
+
+legend.gender{
+    font-weight: bold;
+   float: left;
+    margin-top: 0;
+    margin-left: 20px;
+ 
+}
+
+input[type="radio"]{
+    margin-left: 20px;
+    
+  
+}
+
+input[type="checkbox"]{
+    margin: 10px;
+}
+
+input[type="submit"]{
+    width: 200px;
+    height: 30px;
+    color: white;
+    background: rgb(74, 68, 96);
+}
+
+input[type="file"]{
+    width:200px;
+    height: 30px;
+
+    
+}
+
+input[type="reset"]{
+    width:200px;
+    height: 30px;
+    float: right;
+    
+}
+

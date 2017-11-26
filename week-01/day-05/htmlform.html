@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="htmlform.css" style="text/css" rel="stylesheet">
+    </head>
+    
+    <body>
+        <form action="#">
+
+        <div class="container">
+            <h2>Profile</h2>
+            <div class=box1>Personal Info</div>
+            <div class="box2">Contact</div>
+            <div class="box3">
+                <legend id="name">Name</legend>
+                <input type="text" name="name" required>
+                <span>
+                  <legend class="birth">Date of Birth</legend><br>
+                  <input type="date" min="1800" max="2010" name="birthy" placeholder="pl. 1984">
+                </span>
+                <span class="sex">
+                  <legend class="gender">Sex</legend><br>
+                    <input type="radio" id="female" name="sex">
+                    <label for="female">Female</label>
+                    <input type="radio" id="male" name="sex">
+                    <label for="male">Male</label>
+                </span>
+                
+                <legend class="bold">What are your favourite brands?</legend>
+                <span class="col1">
+                <input type="checkbox" id="adidas"> 
+                <label for="adidas">Adidas</label><br> 
+                <input type="checkbox" id="apple">
+                <label for="apple">Apple</label><br>  
+                <input type="checkbox" id="coca-cola">
+                <label for="coca-cola">Coca-cola</label><br>   
+                <input type="checkbox" id="mazda">
+                <label for="mazda">Mazda</label><br>   
+                <input type="checkbox" id="nike">
+                <label for="nike">Nike</label> <br>
+                </span>    
+               
+                    
+                <span class="col2">
+                <input type="checkbox" id="opel">
+                <label for="opel">Opel</label><br>
+                <input type="checkbox" id="ray-ban">
+                <label for="ray-ban">Ray-Ban</label><br>
+                <input type="checkbox" id="starbucks">
+                <label for="starbucks">Starbucks</label><br>
+                <input type="checkbox" id="tesla">
+                <label for="tesla">Tesla</label><br>
+                <input type="checkbox" id="yahoo">
+                <label for="yahoo">Yahoo</label><br>
+                 </span>   
+              <span>
+            <p>You can choose multiple!</p>
+            </span>  
+            </div>
+            
+            <div class="box4">
+                <legend class="bold">Phone number</legend>
+                <input type="number" placeholder="+36 -- --- ---" required>
+                <legend class="bold">E-mail</legend>
+                <input type="email" placeholder="nev@domain.hu" required>
+                <legend class="bold">Facebook profile</legend>
+                <input type="url" placeholder="https://facebook.com/...">
+                <legend class="bold">What kind of building do you live in?</legend>
+    
+                <input type="text" list="building" placeholder="Choose a type!">
+                <datalist id="building">
+                    <option value="House"/>
+                    <option value="Flat"/>
+                    <option value="Cave"/>
+                </datalist>
+            
+            </div>
+            
+            <div class="boxbottom"> 
+                <legend class="bold">Introduction</legend>
+                <textarea name="introduction" type="text" placeholder="Write a few sentences about yourself!" cols="100" rows="9"></textarea> 
+    
+                
+           </div>
+            
+            <div class=boxbottom2>
+                <legend>CV upload</legend><br>
+                <input type="file" placeholder="Choose file"> <br>
+                <input type="checkbox" id="accept">
+                <label for="accept">I accept <a href="#">the terms and conditions</a></label> <br>
+                <input type="submit" value="Save">
+                <input type="reset" value="Delete form">
+            
+            </div>
+    
+            
+        </div>  
+     </form>        
+    </body>    
+
+</html>
