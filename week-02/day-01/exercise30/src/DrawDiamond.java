@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class DrawPyramid {
+public class DrawDiamond  {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
@@ -7,7 +7,7 @@ public class DrawPyramid {
 
         int a = input.nextInt();
 
-        for (int i=1; i<= 2 * a; i += 2)
+       for (int i=1; i<= a; i += 2)
         {
             for (int k=0; k < (a - i / 2); k++)
             {
@@ -18,6 +18,19 @@ public class DrawPyramid {
                 System.out.print("*");
             }
             System.out.println("");
+
         }
+
+
+        for (int i = a - 2; i > 0; i-=2) {
+
+            for (int k = 0; k <= (a - i) / 2 + 2; k++) {
+              System.out.print(" ");
+        }
+            for (int j = 0; j < i; j++) {
+              System.out.print("*");
+        }
+          System.out.println("");
+    }
     }
 }
