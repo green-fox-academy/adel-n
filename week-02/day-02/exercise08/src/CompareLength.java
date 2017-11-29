@@ -11,7 +11,15 @@ public class CompareLength {
         p2 [0] = 4;
         p2 [1] = 5;
 
-        for (int i = 1; i < p1[])
+
+        int len2 = p2.length;
+
+        for (int i = 0; i <= len2; i++) {
+        if (p1.length < p2.length) {
+
+                System.out.println(p2[i] + " ");
+            }
+        }
     }
 
 }
