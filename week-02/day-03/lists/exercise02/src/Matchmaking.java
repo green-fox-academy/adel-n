@@ -11,15 +11,10 @@ public class Matchmaking {
 
     for(int i = 0; i < girls.size(); i++) {
 
-        if (i%2 == 0) {
-            order.add(i, girls.get(i));
-        }
-        else {
-            order.add(i, boys.get(i));
-        }
+            order.add(girls.get(i) + "," + boys.get(i));
 
     }
-            order.add("Jeff");
+        order.add("Jeff");
         System.out.println(order);
     }
 }

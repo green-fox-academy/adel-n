@@ -13,12 +13,10 @@ public class Factorio {
     }
 
     public static int factorio(int input) {
-        int i = 1;
-        int fact = 1;
 
-        while(i <= input) {
+        int fact = input;
+        for(int i = (input-1); i > 1; i--){
             fact = fact * i;
-            i = i + 1;
 
         }
         return fact;

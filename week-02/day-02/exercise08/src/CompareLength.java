@@ -1,25 +1,16 @@
+import java.util.Arrays;
+
 public class CompareLength {
 
     public static void main(String[] args) {
 
-        int [] p1 = new int [3];
-        p1 [0] = 1;
-        p1 [1] = 2;
-        p1 [2] = 3;
+        int [] p1 = {1, 2, 3};
+        int [] p2 = {4, 5};
 
-        int [] p2 = new int [2];
-        p2 [0] = 4;
-        p2 [1] = 5;
+        if (p1.length< p2.length) {
 
-
-        int len2 = p2.length;
-
-        for (int i = 0; i <= len2; i++) {
-        if (p1.length < p2.length) {
-
-                System.out.println(p2[i] + " ");
+                System.out.println(Arrays.toString(p2));
             }
         }
     }
 
-}
