@@ -40,26 +40,16 @@ public class VariableMutation {
         boolean i = i1 > (i2 * i2) && i1 < (i2 * i2 * i2);
         System.out.println(i);
 
+
+        // tell if j is dividable by 3 or 5 (print as a boolean)
         int j = 1521;
         boolean j1 = (j % 3 == 0) || (j % 5 == 0);
         System.out.println(j1);
 
+        //fill the k variable with its content 4 times
         String k = "Apple";
         for (int z = 0; z <= 3; z++){
             System.out.println(k);
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }

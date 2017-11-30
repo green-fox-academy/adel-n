@@ -8,6 +8,5 @@ public class DefineBasicInfo {
 
         System.out.println(name+" "+age+" "+ height+" "+ married+" ");
 
-
     }
 }
