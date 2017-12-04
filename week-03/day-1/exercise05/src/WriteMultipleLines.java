@@ -7,6 +7,15 @@ import java.util.Scanner;
 
 public class WriteMultipleLines {
   public static void main(String[] args) {
+// Create a function that takes 3 parameters: a path, a word and a number,
+// than it should write to a file.
+// The path parameter should be a string, that describes the location of the file.
+// The word parameter should be a string, that will be written to the file as lines
+// The number paramter should describe how many lines the file should have.
+// So if the word is "apple" and the number is 5, than it should write 5 lines
+// to the file and each line should be "apple"
+// The function should not raise any error if it could not write the file.
+
     Scanner input = new Scanner(System.in);
     System.out.println("Please enter the path of file: ");
     String path = input.nextLine();
@@ -19,16 +28,17 @@ public class WriteMultipleLines {
     System.out.println("Please enter how many lines the file should have: ");
     int number = input3.nextInt();
 
-    word.add
+    List<String> content = new ArrayList();
 
     try {
-      Path path1 = Paths.get(path);
-      Files.write(path1, word);
-
+      Path filePath = Paths.get(path);
+      for(int i = 0; i < number; i++) {
+        content.add(word);
+        Files.write(filePath, content);
+        System.out.println();
+      }
     } catch (Exception e){
       System.out.println();
     }
-
-
   }
 }
