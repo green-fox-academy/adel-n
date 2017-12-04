@@ -9,6 +9,5 @@ public class TodoPrint {
         str.insert(39, "    - Diablo");
 
         System.out.println(str.toString());
-
     }
 }

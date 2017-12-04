@@ -4,11 +4,7 @@ public class QuoteSwap {
         ArrayList<String> list =
                 new ArrayList<String>(Arrays.asList("What", "I", "do", "create", "I", "cannot", "not", "understand."));
 
-        //list.set(5, "do");
-        //list.set(2, "cannot");
-
         Collections.swap(list, 5, 2);
-
         System.out.println(list);
     }
 }
