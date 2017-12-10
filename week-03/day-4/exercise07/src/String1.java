@@ -2,7 +2,7 @@ public class String1 {
 // Given a string, compute recursively (no loops) a new string where all the
 // lowercase 'x' chars have been changed to 'y' chars.
   public static void main(String[] args) {
-    String string = "xfxkxxxrx";
+    String string = "xxfxkxxxrx";
     String from = "x";
     String to = "y";
 

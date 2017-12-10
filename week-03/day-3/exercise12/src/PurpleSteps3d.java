@@ -8,14 +8,13 @@ public class PurpleSteps3d {
   public static void mainDraw(Graphics graphics){
     // reproduce this:
     // [https://github.com/greenfox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps-3d/r4.png]
-    int sS = 5;
+    int sS = 10;
     int sY = 5;
     int sX=  5;
-    for(int i = 0; i <= 6; i++) {
-      sY = sY * 2;
-      sX = sX * 2;
-      sS = sS * 2;
-      squareDraw(sX, sY, sS);
+    for(int i = 1; i <= 7; i++) {
+      squareDraw(sX, sY, sS*i);
+      sY = sY + (sS*i);
+      sX = sX + (sS*i);
     }
   }
 

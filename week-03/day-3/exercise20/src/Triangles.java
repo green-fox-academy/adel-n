@@ -3,27 +3,22 @@ import java.awt.*;
 
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
-public class StarryNight {
+public class Triangles {
   public static void mainDraw(Graphics graphics){
-    // draw the night sky:
-    // - The background should be black
-    // - The stars can be small squares
-    // - The stars should have random positions on the canvas
-    // - The stars should have random color (some shade of grey)
-    graphics.setColor(Color.black);
-    graphics.fillRect(0, 0, WIDTH, HEIGHT);
+    int tB = 10;
+    int tH = 9;
+    for (int i=0; i <10; i++) {
+      for (int j = 0; j < i + 1; j++)
 
-    int stars = (int)(Math.random() * 700);
-
-    for(int i = 0; i < stars; i++){
-      int rect = (int) (Math.random() * 20);
-      int color = (int) (Math.random() * 255);
-      Color myGrey = new Color(color, color, color);
-      graphics.setColor(myGrey);
-      int x = (int) (Math.random() * WIDTH);
-      int y = (int) (Math.random() * HEIGHT);
-      graphics.fillRect(x, y, rect, rect);
+        triangle(WIDTH / 2 - i * tB / 2 + j * tB, 20 + i * tH, tH, tB, graphics);
     }
+  }
+
+  public static void triangle (int aX, int aY, int h, int b, Graphics graphics){
+    int [] x ={aX, aX - b / 2, aX + b / 2};
+    int [] y ={aY, aY + h, aY + h};
+    int n = 3;
+    graphics.drawPolygon(x, y, n);
   }
 
   //    Don't touch the code below
