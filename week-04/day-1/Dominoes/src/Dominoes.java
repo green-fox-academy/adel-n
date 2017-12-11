@@ -14,7 +14,7 @@ public class Dominoes {
     dominoes.remove(5);
     dominoes.add(4, dominoes.get(5));
     dominoes.remove(6);
-    
+
     System.out.println(dominoes);
   }
 
