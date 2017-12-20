@@ -8,9 +8,9 @@ public class Board extends JComponent implements KeyListener {
   int testBoxY;
 
   public Board() {
-    testBoxX = 300;
-    testBoxY = 300;
-
+    testBoxX = 0;
+    testBoxY = 0;
+    Character character = new Character();
     // set the size of your draw board
     setPreferredSize(new Dimension(720, 720));
     setVisible(true);
@@ -19,14 +19,20 @@ public class Board extends JComponent implements KeyListener {
   @Override
   public void paint(Graphics graphics) {
     super.paint(graphics);
-    //graphics.fillRect(testBoxX, testBoxY, 100, 100);
+
     // here you have a 720x720 canvas
     // you can create and draw an image using the class below e.g.
     Map map = new Map();
     map.getMap("map.txt", graphics);
 
+    Character character = new Character("hero-down.png", testBoxX, testBoxY);
+    character.draw(graphics);
+
+    //graphics.fillRect(testBoxX, testBoxY, 72, 72);
+
 
   }
+
   public static void main(String[] args) {
     // Here is how you set up a new window and adding our board to it
     JFrame frame = new JFrame("RPG Game");
@@ -41,6 +47,7 @@ public class Board extends JComponent implements KeyListener {
     frame.addKeyListener(board);
     // Notice (at the top) that we can only do this
     // because this Board class (the type of the board object) is also a KeyListener
+
   }
 
   // To be a KeyListener the class needs to have these 3 methods in it
@@ -52,6 +59,7 @@ public class Board extends JComponent implements KeyListener {
   @Override
   public void keyPressed(KeyEvent e) {
 
+
   }
 
   // But actually we can use just this one for our goals here
@@ -59,9 +67,17 @@ public class Board extends JComponent implements KeyListener {
   public void keyReleased(KeyEvent e) {
     // When the up or down keys hit, we change the position of our box
     if (e.getKeyCode() == KeyEvent.VK_UP) {
-      testBoxY -= 100;
+      //character.moveCharacter(Character.Directions.UP);
+      testBoxY = testBoxY - 72;
     } else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
-      testBoxY += 100;
+      //character.moveCharacter(Character.Directions.DOWN);
+      testBoxY = testBoxY + 72;
+    } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+      //character.moveCharacter(Character.Directions.LEFT);
+      testBoxX -= 72;
+    } else if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
+      //character.moveCharacter(Character.Directions.RIGHT);
+      testBoxX += 72;
     }
     // and redraw to have a new picture with the new coordinates
     repaint();

@@ -20,8 +20,8 @@ public class Map {
   public void getMap(String pathString, Graphics graphics) {
       List<String> fileLines = getFileContent(pathString);
 
-      PositionedImage tile = new PositionedImage("floor.png");
-      PositionedImage wall = new PositionedImage("wall.png");
+      PositionedImage tile = new PositionedImage("floortp.png");
+      PositionedImage wall = new PositionedImage("walltpp.jpg");
 
       for (int i = 0; i < fileLines.size(); i++) {
         for (int j = 0; j < fileLines.get(i).length(); j++) {
