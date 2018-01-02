@@ -1,9 +1,11 @@
-public class Bird extends Animal {
-  public Bird(String name, int age) {
+package main.java.animals;
+
+public class Reptile extends Animal {
+  public Reptile(String name, int age) {
     super(name);
   }
 
-  public Bird(String name) {
+  public Reptile(String name) {
     super(name);
   }
 
@@ -14,11 +16,11 @@ public class Bird extends Animal {
 
   @Override
   public String eat() {
-    return "eating seed";
+    return "eating insects";
   }
 
   @Override
   public String move() {
-    return "flying";
+    return "crawling";
   }
 }

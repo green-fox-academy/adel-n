@@ -1,3 +1,5 @@
+package main.java.animals;
+
 public abstract class Animal {
   private String name;
   private int age;
@@ -29,6 +31,5 @@ public abstract class Animal {
   public abstract String eat();
 
   public abstract String move();
-
 
 }
