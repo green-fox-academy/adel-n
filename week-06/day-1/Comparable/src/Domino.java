@@ -18,10 +18,10 @@ public class Domino implements Comparable<Domino> {
     int compare0 = compareDominoes.getValues()[0];
     int compare1 = compareDominoes.getValues()[1];
 
-    if (this.getValues()[0] != compare0) {
-      return this.getValues()[0] - compare0;
-    } else {
+    if (this.getValues()[1] != compare0) {
       return this.getValues()[1] - compare1;
+    } else {
+      return this.getValues()[0] - compare0;
     }
   }
 }
