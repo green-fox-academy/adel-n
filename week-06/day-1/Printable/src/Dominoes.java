@@ -14,5 +14,9 @@ public class Dominoes {
 
     Collections.sort(dominoes);
     System.out.println(dominoes.toString());
+
+    for(Domino d : dominoes) {
+      d.printAllFields();
+    }
   }
 }
