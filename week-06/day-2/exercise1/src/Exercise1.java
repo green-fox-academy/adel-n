@@ -11,11 +11,11 @@ public class Exercise1 {
     System.out.println(getEvenNumbers(numbers));
 
     numbers.stream()
-            .filter(number -> Math.abs(number) % 2 == 0)
+            .filter(number -> number % 2 == 0)
             .forEach(System.out::println);
 
     List<Integer> evenNumbers = numbers.stream()
-            .filter(number -> Math.abs(number) % 2 == 0)
+            .filter(number -> number % 2 == 0)
             .collect(Collectors.toList());
     System.out.println(evenNumbers);
   }
