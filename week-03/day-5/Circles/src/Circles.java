@@ -6,7 +6,7 @@ import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 public class Circles {
 
   public static void mainDraw(Graphics graphics) {
-    graphics.setColor(Color.getHSBColor((float)Math.random(), (float)Math.random(), (float)Math.random()));
+    //graphics.setColor(Color.getHSBColor((float)Math.random(), (float)Math.random(), (float)Math.random()));
     graphics.fillRect(0, 0, WIDTH, HEIGHT);
 
     int r = 300;

@@ -28,7 +28,7 @@ public class Plant {
     return currentWater;
   }
 
-  public void water(int water) {
+    public void water(int water) {
     this.currentWater =+ water;
   }
 
