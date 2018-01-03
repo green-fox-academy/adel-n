@@ -12,7 +12,7 @@ public class Exercise3 {
 
     List<Integer> squaredPositives = numbers.stream()
             .filter(number -> number > 0)
-            .map(number -> number * number)
+            .map(number -> (int)Math.pow(number, 2))
             .collect(Collectors.toList());
     System.out.println(squaredPositives);
   }
