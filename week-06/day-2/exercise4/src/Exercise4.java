@@ -25,6 +25,6 @@ public class Exercise4 {
         squaredMoreThan20.add(pow);
       }
     }
-    return (squaredMoreThan20);
+    return squaredMoreThan20;
   }
 }
