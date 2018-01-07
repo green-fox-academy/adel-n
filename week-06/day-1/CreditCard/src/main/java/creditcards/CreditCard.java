@@ -3,8 +3,8 @@ package main.java.creditcards;
 import java.util.Random;
 
 public class CreditCard implements CreditCardy{
-  String codeAccount;
-  String nameCardholder;
+  private String codeAccount;
+  private String nameCardholder;
 
   public CreditCard(String name) {
     this.nameCardholder = name;
