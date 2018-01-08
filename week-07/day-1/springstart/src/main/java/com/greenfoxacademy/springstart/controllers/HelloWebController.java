@@ -25,6 +25,7 @@ public class HelloWebController {
     model.addAttribute("name", name);
     model.addAttribute("counter", counter.getAndIncrement());
     model.addAttribute("hellos", hellos[(int)(Math.random() * hellos.length)]);
+    model.addAttribute("colors", colors[(int)(Math.random() * colors.length)]);
     return "greeting";
   }
 }
