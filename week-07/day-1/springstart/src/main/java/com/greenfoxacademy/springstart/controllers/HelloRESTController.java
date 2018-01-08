@@ -10,9 +10,8 @@ import java.util.concurrent.atomic.AtomicLong;
 public class HelloRESTController {
   AtomicLong counter = new AtomicLong(1);
 
-  @RequestMapping(value="/greeting")
+  @RequestMapping(value = "/greeting")
   public Greeting greeting(@RequestParam("name") String name) {
-
     return new Greeting(counter.incrementAndGet(), name);
   }
 }
