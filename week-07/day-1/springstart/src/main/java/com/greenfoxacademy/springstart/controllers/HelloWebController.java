@@ -17,8 +17,10 @@ public class HelloWebController {
           "Hola", "Jambo", "Hujambo", "Hej", "Sa-wat-dee", "Merhaba", "Selam", "Vitayu", "Xin chào", "Hylo", "Sut Mae",
           "Sholem Aleychem", "Sawubona"};
   String[] colors = {"white", "grey", "black", "magenta", "pink", "red", "brown", "orange", "yellow", "green", "cyan",
-          "blue", "violet"};
-
+          "blue", "violet", "indianred", "crimson", "purple", "midnightblue", "royalblue", "deepskyblue", "aquamarine",
+          "darkgreen"};
+  String[] backgroundColors = {"darkolivegreen", "ivory", "warmgrey", "darkgoldenrod", "brick", "chocolate", "ivoryblack",
+          "darkgreen", "firebrick", "maroon", "dimgray", "darkslategrey"};
 
   @RequestMapping(value = "/web/greeting")
   public String greeting(Model model, @RequestParam("name") String name) {
@@ -26,6 +28,8 @@ public class HelloWebController {
     model.addAttribute("counter", counter.getAndIncrement());
     model.addAttribute("hellos", hellos[(int)(Math.random() * hellos.length)]);
     model.addAttribute("colors", colors[(int)(Math.random() * colors.length)]);
+    model.addAttribute("backgroundColors", backgroundColors[(int)(Math.random() * backgroundColors.length)]);
+    model.addAttribute("size", (int) (Math.random()*(80)) + 10);
     return "greeting";
   }
 }
