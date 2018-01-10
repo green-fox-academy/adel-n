@@ -7,21 +7,35 @@
 </head>
 <body>
 <table border="1">
-    <thead>
+<thead>
     <tr>
+        <th>Index</th>
         <th>Name</th>
         <th>Balance</th>
         <th>Type</th>
         <th>Currency</th>
+        <th>King</th>
+        <th>Guy</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="account : ${multiple}">
+        <td th:text="${accountStat.index}"></td>
         <td th:text="${account.name}"></td>
         <td th:text="${account.balance}">Balance</td>
         <td th:text="${account.animalType}">Type</td>
         <td th:text="${account.currency}">Currency</td>
-    </tr >
+        <td style="background-color: gold" th:if="${account.name} == 'Simba'" th:text="King"></td>
+        <td th:unless="${account.name} == 'Simba'" th:text="Plebs"></td>
+        <td th:switch="${account.animalType}">
+            <span th:case="'lion'" th:text="Good" ></span>
+            <span th:case="'meerkat'" th:text="Good" ></span>
+            <span th:case="'warthog'" th:text="Good" ></span>
+            <span th:case="'monkey'" th:text="Good" ></span>
+            <span th:case="'hyena'" th:text="Bad" ></span>
+            <span th:case="'darklion'" th:text="Bad" ></span>
+        </td>
+    </tr>
     </tbody>
 </table>
 </body>

@@ -29,11 +29,13 @@ public class ShowController {
   @RequestMapping(value = "/show/multiple")
   public String thirdEndPoint(Model model) {
     List<BankAccount> accounts = new ArrayList<>();
-    BankAccount secondAccount = new BankAccount("Scar", 1000000, "lion", "Zebra");
+    BankAccount firstAccount = new BankAccount("Simba", 2000, "lion", "Zebra");
+    BankAccount secondAccount = new BankAccount("Scar", 1000000, "darklion", "Zebra");
     BankAccount thirdAccount = new BankAccount("Rafiki", 300, "monkey", "Zebra");
     BankAccount fourthAccount = new BankAccount("Timon", 100, "meerkat", "Bug");
     BankAccount fifthAccount = new BankAccount("Pumba", 100, "warthog", "Bug");
     BankAccount sixthAccount = new BankAccount("Shenzi", 0, "hyena", "Zebra");
+    accounts.add(firstAccount);
     accounts.add(secondAccount);
     accounts.add(thirdAccount);
     accounts.add(fourthAccount);
