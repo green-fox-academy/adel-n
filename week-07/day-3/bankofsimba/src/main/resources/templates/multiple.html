@@ -5,8 +5,29 @@
     <link rel="stylesheet" th:href="@{/style.css}" />
     <meta charset="utf-8" />
 </head>
+<style>
+    table {
+        border: 2px solid black;
+    }
+
+    thead {
+        background-color: dimgray;
+        color: aliceblue;
+        font-family: "Arial Narrow";
+        font-size: medium;
+    }
+
+    tbody {
+        font-family: Helvetica;
+    }
+
+    td:hover{
+        background-color: lightgrey;
+    }
+
+</style>
 <body>
-<table border="1">
+<table>
 <thead>
     <tr>
         <th>Index</th>
@@ -26,7 +47,7 @@
         <td th:text="${account.animalType}">Type</td>
         <td th:text="${account.currency}">Currency</td>
         <td style="background-color: gold" th:if="${account.name} == 'Simba'" th:text="King"></td>
-        <td th:unless="${account.name} == 'Simba'" th:text="Plebs"></td>
+        <td style="background-color: rosybrown" th:unless="${account.name} == 'Simba'" th:text="Plebs"></td>
         <td th:text="${account.evaluation}"></td>
     </tr>
     </tbody>
