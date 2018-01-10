@@ -27,14 +27,7 @@
         <td th:text="${account.currency}">Currency</td>
         <td style="background-color: gold" th:if="${account.name} == 'Simba'" th:text="King"></td>
         <td th:unless="${account.name} == 'Simba'" th:text="Plebs"></td>
-        <td th:switch="${account.animalType}">
-            <span th:case="'lion'" th:text="Good" ></span>
-            <span th:case="'meerkat'" th:text="Good" ></span>
-            <span th:case="'warthog'" th:text="Good" ></span>
-            <span th:case="'monkey'" th:text="Good" ></span>
-            <span th:case="'hyena'" th:text="Bad" ></span>
-            <span th:case="'darklion'" th:text="Bad" ></span>
-        </td>
+        <td th:text="${account.evaluation}"></td>
     </tr>
     </tbody>
 </table>
