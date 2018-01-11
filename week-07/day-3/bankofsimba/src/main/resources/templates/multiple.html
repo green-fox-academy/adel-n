@@ -13,7 +13,7 @@
     thead {
         background-color: dimgray;
         color: aliceblue;
-        font-family: "Arial Narrow";
+        font-family: "Arial";
         font-size: medium;
     }
 
@@ -37,18 +37,20 @@
         <th>Currency</th>
         <th>King</th>
         <th>Guy</th>
+        <th>Deposit</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="account : ${multiple}">
         <td th:text="${accountStat.index}"></td>
-        <td th:text="${account.name}"></td>
+        <td style="font-weight: bold" th:text="${account.name}"></td>
         <td th:text="${account.balance}">Balance</td>
         <td th:text="${account.animalType}">Type</td>
         <td th:text="${account.currency}">Currency</td>
         <td style="background-color: gold" th:if="${account.name} == 'Simba'" th:text="King"></td>
-        <td style="background-color: rosybrown" th:unless="${account.name} == 'Simba'" th:text="Plebs"></td>
+        <td style="" th:unless="${account.name} == 'Simba'" th:text="Plebs"></td>
         <td th:text="${account.evaluation}"></td>
+        <td><button type="button">Deposit</button></td>
     </tr>
     </tbody>
 </table>
