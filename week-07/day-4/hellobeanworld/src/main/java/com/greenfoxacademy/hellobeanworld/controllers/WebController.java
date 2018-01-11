@@ -6,17 +6,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.Random;
-
 @Controller
 public class WebController {
   @Autowired
   UtilityService utilityService;
-
-  String[] colors = {"white", "grey", "black", "magenta", "pink", "red", "brown", "orange", "yellow", "green", "cyan",
-          "blue", "violet", "indianred", "crimson", "purple", "midnightblue", "royalblue", "deepskyblue", "aquamarine",
-          "darkgreen"};
-
 
   @RequestMapping(value = "/useful")
   public String usefulEndPoint(Model model) {
@@ -28,5 +21,10 @@ public class WebController {
     utilityService.randomColor();
     model.addAttribute("color", utilityService.randomColor());
     return "colored";
+  }
+
+  @RequestMapping(value = "/useful/email")
+  public String emailEndPoint() {
+    
   }
 }
