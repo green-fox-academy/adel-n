@@ -15,7 +15,6 @@ public class HelloBeanWorldApplication implements CommandLineRunner{
 	@Autowired
   RedColor redColor;
 
-
 	public static void main(String[] args) {
 		SpringApplication.run(HelloBeanWorldApplication.class, args);
 	}
@@ -26,3 +25,5 @@ public class HelloBeanWorldApplication implements CommandLineRunner{
 		redColor.printColor();
 	}
 }
+
+

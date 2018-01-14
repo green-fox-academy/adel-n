@@ -6,8 +6,35 @@
     <meta charset="utf-8" />
 </head>
 <body>
-<a th:href="@{/useful/colored}">Colored Background</a>
-<a th:href="@{/useful/email}">Email Validator</a>
+<form class="button" th:action="@{/useful/colored}" method="post">
+    <input type="submit" value="Colored Background"/>
+</form>
 
+<h3>Email Validator</h3>
+
+<form action="#" th:action="@{/useful/email}" method="post">
+    <p>Email: <input type="text" name="input"/> </p>
+    <td>
+        <span th:if="${valid}" th:style="'color: green;'" th:text="${input}" />
+        <span th:unless="${valid}" th:style="'color: red;'" th:text="${input}" />
+    </td>
+    <p><input type="submit" value="Submit"/></p>
+</form>
+
+<h3>Ceasar Encoding / Decoding</h3>
+    <form action="#" th:action="@{useful/encoding}" method="post">
+        <p>Text: <input type="text" name="text" /></p>
+        <p>Number: <input type="text" name="number" /></p>
+        <button type="submit">Encode</button>
+    </form>
+
+    <form action="#" th:action="@{useful/decoding}" method="post">
+        <p>Text: <input type="text" name="text" /></p>
+        <p>Number: <input type="text" name="number" /></p>
+        <button type="submit">Decode</button>
+    </form>
+<h4>Result: </h4>
+<p th:text="${coded}" th:style="'color: darkblue; font-weight: bold'"></p>
 </body>
 </html>
+
