@@ -19,7 +19,7 @@ public class ConnectionWithMySQLApplication implements CommandLineRunner {
 
   @Override
   public void run(String... args) throws Exception {
-    toDoRepository.save(new ToDo("I have to learn Object Relational Mapping", true, false));
+    toDoRepository.save(new ToDo("Learn Object Relational Mapping", true, false));
 		toDoRepository.save(new ToDo("Start the day", true, true));
 		toDoRepository.save(new ToDo("Finish H2 workshop1", true, true));
 		toDoRepository.save(new ToDo("Finish JPA workshop2", false, false));

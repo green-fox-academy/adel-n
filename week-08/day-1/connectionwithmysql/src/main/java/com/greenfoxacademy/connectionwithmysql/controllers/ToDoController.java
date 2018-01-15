@@ -6,7 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,11 +21,6 @@ import java.util.stream.StreamSupport;
 
     @Autowired
     ToDoRepository toDoRepository;
-
-   /* @GetMapping("/todo")
-    public String showTodo(Model model){
-      return  "todo";
-    }*/
 
     @GetMapping(value = {"/", "/todo"})
     public String list(Model model, @RequestParam(value = "isActive", required = false) Boolean isActive){
@@ -40,5 +38,18 @@ import java.util.stream.StreamSupport;
       }
       model.addAttribute("todosList", todosList);
       return "todo";
+    }
+
+    @GetMapping("/todo/add")
+    public String add(Model model) {
+      ToDo toDo = new ToDo();
+      model.addAttribute("todo", toDo);
+      return "add";
+    }
+
+    @PostMapping("/todo/add")
+    public ModelAndView addTodo(@ModelAttribute ToDo toDo) {
+      toDoRepository.save(toDo);
+      return new ModelAndView("redirect:/todo/");
     }
 }
