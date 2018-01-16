@@ -2,6 +2,7 @@ package com.greenfoxacademy.connectionwithmysql.controllers;
 
 import com.greenfoxacademy.connectionwithmysql.models.ToDo;
 import com.greenfoxacademy.connectionwithmysql.repositories.ToDoRepository;
+import com.sun.xml.internal.bind.v2.TODO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,11 +27,11 @@ import java.util.stream.StreamSupport;
         toDoRepository.findAll().forEach(todosList::add);
       } else if (isActive) {
         todosList = StreamSupport.stream(toDoRepository.findAll().spliterator(), false)
-                .filter(p -> p.isDone())
+                .filter(p -> p.getIsDone())
                 .collect(Collectors.toList());
       } else {
         todosList = StreamSupport.stream(toDoRepository.findAll().spliterator(), false)
-                .filter(p -> !p.isDone())
+                .filter(p -> !p.getIsDone())
                 .collect(Collectors.toList());
       }
       model.addAttribute("todosList", todosList);
@@ -54,5 +55,19 @@ import java.util.stream.StreamSupport;
     public ModelAndView delete(@PathVariable Integer id) {
       toDoRepository.delete(id);
       return new ModelAndView("redirect:/todo/");
+    }
+
+    @GetMapping("edit/{id}")
+    public String showEdit(@PathVariable Integer id, Model model) {
+      ToDo toDo = toDoRepository.findOne(id);
+      model.addAttribute("todo", toDo);
+      return "edit";
+    }
+
+    @PostMapping("/edit/{id}")
+    public String edit(@PathVariable Integer id, @ModelAttribute ToDo toDo) {
+      toDo.setId(id);
+      toDoRepository.save(toDo);
+      return "redirect:/";
     }
 }

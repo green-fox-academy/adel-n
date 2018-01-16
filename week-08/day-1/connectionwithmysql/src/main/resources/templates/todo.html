@@ -12,15 +12,24 @@
         <th>Action</th>
         <th>Done</th>
         <th>Urgent</th>
+        <th>Delete</th>
+        <th>Edit</th>
     </tr>
     <tr th:each="todo: ${todosList}" th:object="${todo}">
         <td th:text="${todo.id}"></td>
         <td th:text="${todo.title}"></td>
-        <td th:text="${todo.isUrgent()}"></td>
-        <td th:text="${todo.isDone()}"></td>
-        <td><form action="#" th:action="@{/delete/} + *{id}" method="post">
-            <input value="delete" type="submit"/>
-        </form></td>
+        <td th:text="${todo.isUrgent}"></td>
+        <td th:text="${todo.isDone}"></td>
+        <td>
+            <form action="#" th:action="@{/delete/} + *{id}" method="post">
+                <input value="delete" type="submit"/>
+            </form>
+        </td>
+        <td>
+            <form action="#" th:action="@{/edit/} + *{id}" method="get">
+                <input value="edit" type="submit"/>
+            </form>
+        </td>
     </tr>
 </table>
 </body>
