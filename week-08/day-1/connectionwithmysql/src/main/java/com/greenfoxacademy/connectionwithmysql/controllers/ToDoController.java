@@ -5,10 +5,7 @@ import com.greenfoxacademy.connectionwithmysql.repositories.ToDoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
@@ -50,6 +47,12 @@ import java.util.stream.StreamSupport;
     @PostMapping("/todo/add")
     public ModelAndView addTodo(@ModelAttribute ToDo toDo) {
       toDoRepository.save(toDo);
+      return new ModelAndView("redirect:/todo/");
+    }
+
+    @PostMapping("/delete/{id}")
+    public ModelAndView delete(@PathVariable Integer id) {
+      toDoRepository.delete(id);
       return new ModelAndView("redirect:/todo/");
     }
 }
