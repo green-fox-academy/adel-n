@@ -54,7 +54,7 @@ import java.util.stream.StreamSupport;
     @PostMapping("/delete/{id}")
     public ModelAndView delete(@PathVariable Integer id) {
       toDoRepository.delete(id);
-      return new ModelAndView("redirect:/todo/");
+      return new ModelAndView("redirect:/");
     }
 
     @GetMapping("edit/{id}")
