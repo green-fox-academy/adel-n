@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class ToDo {
+public class Todo {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
@@ -15,10 +15,10 @@ public class ToDo {
   private boolean isUrgent;
   private boolean isDone;
 
-  public ToDo() {
+  public Todo() {
   }
 
-  public ToDo(String title, boolean isUrgent, boolean isDone) {
+  public Todo(String title, boolean isUrgent, boolean isDone) {
     this.title = title;
     this.isUrgent = isUrgent;
     this.isDone = isDone;
