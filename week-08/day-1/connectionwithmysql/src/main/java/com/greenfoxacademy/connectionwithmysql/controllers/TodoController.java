@@ -2,9 +2,7 @@ package com.greenfoxacademy.connectionwithmysql.controllers;
 
 import com.greenfoxacademy.connectionwithmysql.factories.TodoFactory;
 import com.greenfoxacademy.connectionwithmysql.models.Todo;
-import com.greenfoxacademy.connectionwithmysql.repositories.TodoRepository;
 import com.greenfoxacademy.connectionwithmysql.services.TodoService;
-import com.greenfoxacademy.connectionwithmysql.services.TodoServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,9 +16,6 @@ import java.util.stream.StreamSupport;
 
 @Controller
   public class TodoController {
-/*
-    @Autowired
-    TodoRepository toDoRepository;*/
 
     @Autowired
     TodoService todoService;
@@ -79,9 +74,9 @@ import java.util.stream.StreamSupport;
     }
 
     @GetMapping("/search")
-    public String search(@RequestParam(required = false) String searchTerm, Model model) {
-      List<Todo> searchList = todoService.searchByTitle(searchTerm);
-      model.addAttribute("search", searchList);
+    public String search(@RequestParam(value = "search", required = false) String search, Model model) {
+      List<Todo> searchList = todoService.searchByTitle(search);
+      model.addAttribute("searchList", searchList);
       return "todo";
     }
 }

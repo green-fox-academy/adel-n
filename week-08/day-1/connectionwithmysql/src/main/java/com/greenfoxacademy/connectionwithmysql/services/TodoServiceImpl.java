@@ -40,6 +40,6 @@ public class TodoServiceImpl implements TodoService{
 
   @Override
   public List<Todo> searchByTitle(String title) {
-    return todoRepository.findAllByTitleContainingOrderByTitle(title);
+    return todoRepository.findAllByTitleContains(title);
   }
 }
