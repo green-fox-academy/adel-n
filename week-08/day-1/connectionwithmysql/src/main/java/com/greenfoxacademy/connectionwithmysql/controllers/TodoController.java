@@ -42,14 +42,14 @@ import java.util.stream.StreamSupport;
 
     @GetMapping("/todo/add")
     public String add(Model model) {
-      Todo toDo = new Todo();
-      model.addAttribute("todo", toDo);
+      Todo todo = new Todo();
+      model.addAttribute("todo", todo);
       return "add";
     }
 
     @PostMapping("/todo/add")
-    public ModelAndView addTodo(@ModelAttribute Todo toDo) {
-      todoService.addTodo(toDo);
+    public ModelAndView addTodo(@ModelAttribute Todo todo) {
+      todoService.addTodo(todo);
       return new ModelAndView("redirect:/");
     }
 
@@ -61,8 +61,8 @@ import java.util.stream.StreamSupport;
 
     @GetMapping("edit/{id}")
     public String showEdit(@PathVariable Integer id, Model model) {
-      Todo toDo = todoService.getTodoById(id);
-      model.addAttribute("todo", toDo);
+      Todo todo = todoService.getTodoById(id);
+      model.addAttribute("todo", todo);
       return "edit";
     }
 
@@ -76,7 +76,7 @@ import java.util.stream.StreamSupport;
     @GetMapping("/search")
     public String search(@RequestParam(value = "search", required = false) String search, Model model) {
       List<Todo> searchList = todoService.searchByTitle(search);
-      model.addAttribute("searchList", searchList);
+      model.addAttribute("todosList", searchList);
       return "todo";
     }
 }

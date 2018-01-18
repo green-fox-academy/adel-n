@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous"/>
+    <title>Add assignee</title>
+</head>
+<body>
+<h1>Add new assignee</h1>
+<div class="form-group">
+    <form  action="#" th:action="@{/addassignee}" th:object="${assignee}" method="post">
+        <div>
+            <label for="name">Name </label>
+            <input id="name" type="text" th:field="*{name}"/>
+        </div>
+        <div>
+            <label for="email">Email </label>
+            <input id="email" type="text" th:field="*{email}"/>
+        </div>
+
+        <div>
+            <input class="btn btn-default" type="submit" value="Submit" />
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
