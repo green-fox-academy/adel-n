@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Date;
 
 @Entity
 public class Todo {
@@ -14,6 +15,8 @@ public class Todo {
   private String title;
   private boolean isUrgent;
   private boolean isDone;
+  private Date date;
+
 
   public Todo() {
   }
@@ -22,6 +25,7 @@ public class Todo {
     this.title = title;
     this.isUrgent = isUrgent;
     this.isDone = isDone;
+    this.date = new Date();
   }
 
   public int getId() {
@@ -54,6 +58,14 @@ public class Todo {
 
   public void setIsDone(boolean done) {
     isDone = done;
+  }
+
+  public Date getDate() {
+    return date;
+  }
+
+  public void setDate(Date date) {
+    this.date = date;
   }
 }
 

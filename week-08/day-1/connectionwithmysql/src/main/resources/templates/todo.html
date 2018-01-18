@@ -26,8 +26,9 @@
     <tr>
         <th>ID</th>
         <th>Action</th>
-        <th>Done</th>
         <th>Urgent</th>
+        <th>Done</th>
+        <th>Date</th>
         <th>Edit</th>
         <th>Delete</th>
     </tr>
@@ -36,6 +37,7 @@
         <td th:text="${todo.title}"></td>
         <td th:text="${todo.isUrgent}"></td>
         <td th:text="${todo.isDone}"></td>
+        <td th:text="${todo.date}"></td>
         <td>
             <form action="#" th:action="@{/edit/} + *{id}" method="get">
                 <input class="btn btn-default" value="edit" type="submit"/>
