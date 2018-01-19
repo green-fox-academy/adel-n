@@ -1,12 +1,10 @@
 package com.greenfoxacademy.connectionwithmysql.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
+@Table
 public class Todo {
 
   @Id
@@ -17,6 +15,10 @@ public class Todo {
   private boolean isDone;
   private Date date;
 
+  //@OneToOne(fetch = FetchType.LAZY)
+  @ManyToOne(cascade = CascadeType.ALL)
+  @JoinColumn(name = "assignee_id")
+  public Assignee assignee;
 
   public Todo() {
   }
@@ -66,6 +68,14 @@ public class Todo {
 
   public void setDate(Date date) {
     this.date = date;
+  }
+
+  public Assignee getAssignee() {
+    return assignee;
+  }
+
+  public void setAssignee(Assignee assignee) {
+    this.assignee = assignee;
   }
 }
 

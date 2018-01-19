@@ -1,7 +1,9 @@
 package com.greenfoxacademy.connectionwithmysql.controllers;
 
 import com.greenfoxacademy.connectionwithmysql.factories.TodoFactory;
+import com.greenfoxacademy.connectionwithmysql.models.Assignee;
 import com.greenfoxacademy.connectionwithmysql.models.Todo;
+import com.greenfoxacademy.connectionwithmysql.services.AssigneeService;
 import com.greenfoxacademy.connectionwithmysql.services.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,6 +24,9 @@ import java.util.stream.StreamSupport;
     @Autowired
     TodoFactory todoFactory;
 
+    @Autowired
+    AssigneeService assigneeService;
+
     @GetMapping(value = {"/", "/todo"})
     public String list(Model model, @RequestParam(value = "isActive", required = false) Boolean isActive){
       List<Todo> todosList = new ArrayList<>();
@@ -37,6 +42,7 @@ import java.util.stream.StreamSupport;
                 .collect(Collectors.toList());
       }
       model.addAttribute("todosList", todosList);
+      model.addAttribute("assignees", assigneeService.getAllAssignees());
       return "todo";
     }
 

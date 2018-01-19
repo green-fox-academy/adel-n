@@ -22,19 +22,32 @@
 
 
 <div class="table-responsive">
-<table class="table">
+<table class="table table-striped">
     <tr>
         <th>ID</th>
         <th>Action</th>
+        <th>Assginee</th>
+        <th>Edit Assignee</th>
         <th>Urgent</th>
         <th>Done</th>
         <th>Date</th>
-        <th>Edit</th>
+        <th>Edit Todo</th>
         <th>Delete</th>
     </tr>
     <tr th:each="todo: ${todosList}" th:object="${todo}">
         <td th:text="${todo.id}"></td>
         <td th:text="${todo.title}"></td>
+        <td th:text="${todo.assignee.name}"></td>
+        <td>
+            <form method="get">
+                <label for="select"></label>
+                <select id="select" name="assignee.id">
+                    <option th:each="assignee: ${assignees}" th:value="${assignee.name}"
+                            th:selected="${assignee.name} " th:text="${assignee.name}"></option>
+                    <input class="btn btn-default" value="select" type="submit"/>
+                </select>
+            </form>
+        </td>
         <td th:text="${todo.isUrgent}"></td>
         <td th:text="${todo.isDone}"></td>
         <td th:text="${todo.date}"></td>
@@ -51,5 +64,6 @@
     </tr>
 </table>
 </div>
+
 </body>
 </html>

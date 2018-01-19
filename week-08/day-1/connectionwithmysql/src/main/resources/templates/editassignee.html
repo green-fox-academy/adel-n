@@ -17,6 +17,13 @@
             <label for="email">Assignee email: </label>
             <input id="email" type="text" th:field="${assignee.email}"/>
         </div>
+        <div><select name ="assignhere" th:field="${assignee.todo}">
+            <option th:each="todo: ${todos}" th:value="$todo.id}"
+                    th:selected="${assignee.todo} == ${todo}" th:text="${todo.title}"></option>
+        </select></div>
+        <div>
+            <input type="submit" value="Submit" />
+        </div>
         <div>
             <input type="submit" value="Submit" />
         </div>
