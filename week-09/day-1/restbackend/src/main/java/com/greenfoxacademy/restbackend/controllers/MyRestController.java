@@ -1,10 +1,11 @@
 package com.greenfoxacademy.restbackend.controllers;
 
-import com.greenfoxacademy.restbackend.models.Doubling;
-import com.greenfoxacademy.restbackend.models.ErrorResponse;
-import com.greenfoxacademy.restbackend.models.Greeting;
-import com.greenfoxacademy.restbackend.models.Response;
+import com.greenfoxacademy.restbackend.models.*;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -31,6 +32,15 @@ public class MyRestController {
       return new ErrorResponse("Please provide a name and a title!");
     } else {
       return new Greeting(name, title);
+    }
+  }
+
+  @GetMapping("/appenda/{appendable}")
+  public Object appendEndPoint(@PathVariable String appendable) {
+    if (appendable == null) {
+      return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    } else {
+      return new AppendA(appendable);
     }
   }
 }
