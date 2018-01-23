@@ -1,6 +1,6 @@
 package com.greenfoxacademy.restbackend.models;
 
-public class AppendA implements Response{
+public class AppendA {
 
   private String appended;
 

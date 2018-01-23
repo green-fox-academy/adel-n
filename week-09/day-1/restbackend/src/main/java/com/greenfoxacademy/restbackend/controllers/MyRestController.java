@@ -4,17 +4,14 @@ import com.greenfoxacademy.restbackend.models.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class MyRestController {
 
 
   @GetMapping("/doubling")
-  public Response doublingEndPoint(@RequestParam(value = "input", required = false) Integer received) {
+  public Object doublingEndPoint(@RequestParam(value = "input", required = false) Integer received) {
     if(received == null) {
       return new ErrorResponse("Please provide an input!");
     }
@@ -22,7 +19,7 @@ public class MyRestController {
   }
 
   @GetMapping("/greeter")
-  public Response greeterEndPoint(@RequestParam(value = "name", required = false) String name,
+  public Object greeterEndPoint(@RequestParam(value = "name", required = false) String name,
                                   @RequestParam(value = "title", required = false) String title) {
     if (name == null) {
       return new ErrorResponse("Please provide a name!");
@@ -41,6 +38,19 @@ public class MyRestController {
       return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     } else {
       return new AppendA(appendable);
+    }
+  }
+
+  @PostMapping("/dountil/{what}")
+  public Object dountilEndPoint(@PathVariable(value = "what", required = false) String what, @RequestBody DoUntil doUntil) {
+
+    int until = doUntil.getUntil();
+    if (what.equals("sum")) {
+      return new Sum(until);
+    } else if (what.equals("factor")) {
+      return new Factor(until);
+    } else {
+      return new ErrorResponse("Please provide a number!");
     }
   }
 }

@@ -1,6 +1,6 @@
 package com.greenfoxacademy.restbackend.models;
 
-public class Doubling implements Response{
+public class Doubling {
 
   private int received;
   private int result;

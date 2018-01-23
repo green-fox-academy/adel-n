@@ -1,6 +1,6 @@
 package com.greenfoxacademy.restbackend.models;
 
-public class ErrorResponse implements Response{
+public class ErrorResponse {
 
   private String error;
 
