@@ -1,6 +1,6 @@
 package com.greenfoxacademy.restbackend.models;
 
-public class Doubling {
+public class Doubling implements Response{
 
   private int received;
   private int result;
@@ -9,9 +9,9 @@ public class Doubling {
   public Doubling() {
   }
 
-  public Doubling(int received, int result) {
+  public Doubling(int received) {
     this.received = received;
-    this.result = result;
+    this.result = received * 2;
   }
 
   public int getReceived() {
