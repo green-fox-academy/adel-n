@@ -42,15 +42,19 @@ public class MyRestController {
   }
 
   @PostMapping("/dountil/{what}")
-  public Object dountilEndPoint(@PathVariable(value = "what", required = false) String what, @RequestBody DoUntil doUntil) {
+  public Object dountilEndPoint(@PathVariable(value = "what", required = false) String what, @RequestBody(required = false) DoUntil doUntil) {
 
-    int until = doUntil.getUntil();
-    if (what.equals("sum")) {
-      return new Sum(until);
+    if (doUntil == null) {
+      return new ErrorResponse("Please provide a number!");
+    } else if (what.equals("sum")) {
+      return new Sum(doUntil.getUntil());
     } else if (what.equals("factor")) {
-      return new Factor(until);
+      return new Factor(doUntil.getUntil());
     } else {
       return new ErrorResponse("Please provide a number!");
     }
   }
+
+/*  @PostMapping("/arrays")
+  public Object arraysEndPoint()*/
 }
