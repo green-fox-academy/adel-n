@@ -55,6 +55,6 @@ public class MyRestController {
     }
   }
 
-/*  @PostMapping("/arrays")
-  public Object arraysEndPoint()*/
+  @PostMapping("/arrays")
+  public Object arraysEndPoint()
 }
