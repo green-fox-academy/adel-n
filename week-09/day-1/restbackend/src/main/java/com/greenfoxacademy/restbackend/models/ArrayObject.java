@@ -1,13 +1,13 @@
 package com.greenfoxacademy.restbackend.models;
 
-public class ArrayHandler {
+public class ArrayObject {
   private String what;
   private int[] numbers;
 
-  public ArrayHandler() {
+  public ArrayObject() {
   }
 
-  public ArrayHandler(String what, int[] numbers) {
+  public ArrayObject(String what, int[] numbers) {
     this.what = what;
     this.numbers = numbers;
   }
@@ -32,5 +32,7 @@ public class ArrayHandler {
 
   }
 
-  public void multiply(int[] )
+  public void multiply() {
+
+  }
 }

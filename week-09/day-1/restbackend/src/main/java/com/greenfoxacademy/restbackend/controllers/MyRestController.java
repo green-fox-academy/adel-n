@@ -43,7 +43,6 @@ public class MyRestController {
 
   @PostMapping("/dountil/{what}")
   public Object dountilEndPoint(@PathVariable(value = "what", required = false) String what, @RequestBody(required = false) DoUntil doUntil) {
-
     if (doUntil == null) {
       return new ErrorResponse("Please provide a number!");
     } else if (what.equals("sum")) {
@@ -55,6 +54,6 @@ public class MyRestController {
     }
   }
 
-  @PostMapping("/arrays")
-  public Object arraysEndPoint()
+/*  @PostMapping("/arrays")
+  public Object arraysEndPoint()*/
 }
