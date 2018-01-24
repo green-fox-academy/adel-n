@@ -73,15 +73,15 @@ public class RestbackendApplicationTests {
 
   @Test
   public void testDoUntilSumEndPoint() throws Exception {
-  mockMvc.perform(
-  post("/dountil/sum")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content("{\"until\": 5}")
-            )
-                    .andExpect(status().isOk())
-          .andExpect(content().contentType("application/json;charset=UTF-8"))
-          .andExpect(jsonPath("$.result", is(15)));
-}
+    mockMvc.perform(
+            post("/dountil/sum")
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .content("{\"until\": 5}")
+    )
+            .andExpect(status().isOk())
+            .andExpect(content().contentType("application/json;charset=UTF-8"))
+            .andExpect(jsonPath("$.result", is(15)));
+  }
 
   @Test
   public void testDoUntilFactorEndPoint() throws Exception {
@@ -95,6 +95,44 @@ public class RestbackendApplicationTests {
             .andExpect(jsonPath("$.result", is(120)));
   }
 
-  
+  @Test
+  public void testArraySumEndPoint() throws Exception {
+    mockMvc.perform(
+            post("/arrays")
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .content("{\"what\": \"sum\", \"numbers\": [1, 2, 5, 10]}")
+    )
+            .andExpect(status().isOk())
+            .andExpect(content().contentType("application/json;charset=UTF-8"))
+            .andExpect(jsonPath("$.result", is(18)));
+
+  }
+
+  @Test
+  public void testArrayMultiplyEndPoint() throws Exception {
+    mockMvc.perform(
+            post("/arrays")
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .content("{\"what\": \"multiply\", \"numbers\": [1, 2, 5, 10]}")
+    )
+            .andExpect(status().isOk())
+            .andExpect(content().contentType("application/json;charset=UTF-8"))
+            .andExpect(jsonPath("$.result", is(100)));
+
+  }
+
+  @Test
+  public void testArrayDoubleEndPoint() throws Exception {
+    int[] testArray = {2,4,10,20};
+    mockMvc.perform(
+            post("/arrays")
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .content("{\"what\": \"double\", \"numbers\": [1, 2, 5, 10]}")
+    )
+            .andExpect(status().isOk())
+            .andExpect(content().contentType("application/json;charset=UTF-8"))
+            .andExpect(jsonPath("$.result", is(testArray)));
+
+  }
 
 }

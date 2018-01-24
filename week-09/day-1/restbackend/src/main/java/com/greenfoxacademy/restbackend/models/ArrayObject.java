@@ -28,11 +28,26 @@ public class ArrayObject {
     this.numbers = numbers;
   }
 
-  public void sum(int[] numbers) {
-
+  public int sum() {
+    int sum = 0;
+    for (int i = 0; i < numbers.length; i++) {
+      sum = sum + numbers[i];
+    }
+    return sum;
   }
 
-  public void multiply() {
+  public int multiply() {
+    int sum = 1;
+    for (int i = 0; i < numbers.length; i++) {
+      sum = sum * numbers[i];
+    }
+    return sum;
+  }
 
+  public int[] doubleNumbers() {
+    for (int i = 0; i < numbers.length; i++) {
+      numbers[i] = numbers[i] * 2;
+    }
+    return numbers;
   }
 }

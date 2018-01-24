@@ -54,6 +54,20 @@ public class MyRestController {
     }
   }
 
-/*  @PostMapping("/arrays")
-  public Object arraysEndPoint()*/
+  @PostMapping(value = "/arrays")
+  public Object arrays(@RequestBody(required = false) ArrayObject arrayObject) {
+    if (arrayObject == null) {
+      return new ErrorResponse("Please provide data!");
+    } else if (arrayObject.getWhat() == null || arrayObject.getNumbers() == null) {
+      return new ErrorResponse("Please provide what to do with the numbers!");
+    } else if (arrayObject.getWhat().equals("sum")) {
+      return new ArraySumMultiply(arrayObject.sum());
+    } else if (arrayObject.getWhat().equals("multiply")) {
+      return new ArraySumMultiply(arrayObject.multiply());
+    } else if (arrayObject.getWhat().equals("double")) {
+      return new ArrayDouble(arrayObject.doubleNumbers());
+    } else {
+      return "This is an invalid operation";
+    }
+  }
 }
