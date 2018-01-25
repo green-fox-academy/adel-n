@@ -21,7 +21,7 @@ public class MyRestController {
     } else {
       String data = "input : " + received.toString();
       Log log = new Log("/doubling", data);
-      logService.save(log);
+      logService.createLog(log);
       return new Doubling(received);
     }
   }
@@ -38,7 +38,7 @@ public class MyRestController {
     } else {
       String data = "name : " + name + ", title : " + title;
       Log log = new Log("/greeter", data);
-      logService.save(log);
+      logService.createLog(log);
       return new Greeting(name, title);
     }
   }
@@ -50,24 +50,25 @@ public class MyRestController {
     } else {
       String data = "Pathvariable : " + appendable;
       Log log = new Log("/appenda/" + appendable, data);
-      logService.save(log);
+      logService.createLog(log);
       return new AppendA(appendable);
     }
   }
 
   @PostMapping("/dountil/{what}")
-  public Object dountilEndPoint(@PathVariable(value = "what", required = false) String what, @RequestBody(required = false) DoUntil doUntil) {
+  public Object dountilEndPoint(@PathVariable(value = "what", required = false) String what,
+                                @RequestBody(required = false) DoUntil doUntil) {
     if (doUntil == null) {
       return new ErrorResponse("Please provide a number!");
     } else if (what.equals("sum")) {
       String data = "Pathvariable : " + what + ", " + doUntil.getUntil();
       Log log = new Log("/dountil/" + what, data);
-      logService.save(log);
+      logService.createLog(log);
       return new Sum(doUntil.getUntil());
     } else if (what.equals("factor")) {
       String data = "Pathvariable : " + what + ", " + doUntil.getUntil();
       Log log = new Log("/dountil/" + what, data);
-      logService.save(log);
+      logService.createLog(log);
       return new Factor(doUntil.getUntil());
     } else {
       return new ErrorResponse("Please provide a number!");
@@ -93,6 +94,11 @@ public class MyRestController {
 
   @GetMapping("/log")
   public Object logEndPoint() {
-    
+    Log log = new Log();
+    log.setEndpoint("/log");
+    log.setData("input: no input");
+    logService.createLog(log);
+    Logs logs = new Logs(logService.getAllLogs(), logService.getAllLogs().size());
+    return logs;
   }
 }
