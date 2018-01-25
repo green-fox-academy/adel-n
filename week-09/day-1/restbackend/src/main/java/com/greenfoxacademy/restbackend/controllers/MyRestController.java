@@ -1,6 +1,8 @@
 package com.greenfoxacademy.restbackend.controllers;
 
 import com.greenfoxacademy.restbackend.models.*;
+import com.greenfoxacademy.restbackend.services.LogService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
@@ -9,18 +11,24 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class MyRestController {
 
+  @Autowired
+  LogService logService;
 
   @GetMapping("/doubling")
   public Object doublingEndPoint(@RequestParam(value = "input", required = false) Integer received) {
-    if(received == null) {
+    if (received == null) {
       return new ErrorResponse("Please provide an input!");
+    } else {
+      String data = "input : " + received.toString();
+      Log log = new Log("/doubling", data);
+      logService.save(log);
+      return new Doubling(received);
     }
-    return new Doubling(received);
   }
 
   @GetMapping("/greeter")
   public Object greeterEndPoint(@RequestParam(value = "name", required = false) String name,
-                                  @RequestParam(value = "title", required = false) String title) {
+                                @RequestParam(value = "title", required = false) String title) {
     if (name == null) {
       return new ErrorResponse("Please provide a name!");
     } else if (title == null) {
@@ -28,6 +36,9 @@ public class MyRestController {
     } else if (name == null && title == null) {
       return new ErrorResponse("Please provide a name and a title!");
     } else {
+      String data = "name : " + name + ", title : " + title;
+      Log log = new Log("/greeter", data);
+      logService.save(log);
       return new Greeting(name, title);
     }
   }
@@ -37,6 +48,9 @@ public class MyRestController {
     if (appendable == null) {
       return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     } else {
+      String data = "Pathvariable : " + appendable;
+      Log log = new Log("/appenda/" + appendable, data);
+      logService.save(log);
       return new AppendA(appendable);
     }
   }
@@ -46,15 +60,21 @@ public class MyRestController {
     if (doUntil == null) {
       return new ErrorResponse("Please provide a number!");
     } else if (what.equals("sum")) {
+      String data = "Pathvariable : " + what + ", " + doUntil.getUntil();
+      Log log = new Log("/dountil/" + what, data);
+      logService.save(log);
       return new Sum(doUntil.getUntil());
     } else if (what.equals("factor")) {
+      String data = "Pathvariable : " + what + ", " + doUntil.getUntil();
+      Log log = new Log("/dountil/" + what, data);
+      logService.save(log);
       return new Factor(doUntil.getUntil());
     } else {
       return new ErrorResponse("Please provide a number!");
     }
   }
 
-  @PostMapping(value = "/arrays")
+  @PostMapping("/arrays")
   public Object arrays(@RequestBody(required = false) ArrayObject arrayObject) {
     if (arrayObject == null) {
       return new ErrorResponse("Please provide data!");
@@ -67,7 +87,12 @@ public class MyRestController {
     } else if (arrayObject.getWhat().equals("double")) {
       return new ArrayDouble(arrayObject.doubleNumbers());
     } else {
-      return "This is an invalid operation";
+      return "This is an invalid operation!";
     }
+  }
+
+  @GetMapping("/log")
+  public Object logEndPoint() {
+    
   }
 }
